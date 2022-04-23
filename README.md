@@ -1,4 +1,4 @@
-# ArgoCD
+## ArgoCD
 
 Quick start 
 > https://argo-cd.readthedocs.io/en/stable/
@@ -12,6 +12,10 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 **Verify the CRDs**
 ```
 kubectl get crd | grep argoproj.io
+
+applications.argoproj.io      
+applicationsets.argoproj.io   
+appprojects.argoproj.io    
 ```
 
 **Port Forwarding**
@@ -29,6 +33,13 @@ Default Pswd:
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
 
+### Create Argocd Application
 
+**Applicaion Template**
+> https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/application.yaml
+
+```
+kubectl apply -f applications/smartbus.yaml
+```
 
 
